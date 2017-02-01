@@ -7,5 +7,6 @@ Sync can be enabled for next purposes:
 * To have all the products using external ids - in that case processed wine/drink information can be easily pulled back to customer programmatically.
 
 There are two kind of sync commands - sync and sync_clear. They are almost the same:
-* sync performs UPSERT upon passed products
-* sync_clear performs UPSERT and marking all the unpassed products as out of stock (without deleting them).
+* [sync](/endpoints.md#sync-inventory) performs UPSERT upon passed products
+* [sync_clear](/endpoints.md#sync-inventory-with-clearing) performs UPSERT and marking all the unpassed products as out of stock (without deleting them).
+
