@@ -10,3 +10,17 @@ There are two kind of sync commands - sync and sync_clear. They are almost the s
 * [sync](/endpoints.md#sync-inventory) performs UPSERT upon passed products
 * [sync_clear](/endpoints.md#sync-inventory-with-clearing) performs UPSERT and marking all the unpassed products as out of stock (without deleting them).
 
+```python
+url = 'http://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/sync'
+
+batch = [{'external_id': 111, 'barcodes': ['00123345'], 'in_stock': 12}, 
+         {'external_id': 222, 'barcodes': ['08234123'], 'in_stock': 12}]
+
+response = requests.patch(url, batch)
+```
+
+See [API reference](/endpoints.md#sync-inventory) for more details.
+
+## Migration from the old sync to external_id sync
+
+For customers, who still use the old sync, where barcodes are used as primary keys, just need to populate their inventory with external_id using the old POS sync call. Once all the inventory items get external ids, it's possible to switch to new sync described above.
