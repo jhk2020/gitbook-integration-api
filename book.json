@@ -1,4 +1,4 @@
-{
+	{
 	"plugins": ["theme-api"],
 	"pluginsConfig": {
 		"theme-api": {

@@ -5,8 +5,10 @@ Before calling private APIs, you should create an authenticated session. It’s 
 
 {% method %}
 {% sample lang="bash" %}
+The call below will perform POST to login endpoint and create a cookie.txt file:
 ```bash
-curl htts://integration-test.gettipsi.com/api/rest/v001/login
+echo '{"username": "USERNAME", "password": "PASSWORD"}' > params.json
+curl -c cookie.txt -vX POST htts://integration-test.gettipsi.com/api/rest/v001/login -d @params.json
 ```
 
 {% sample lang="python" %}
