@@ -4,7 +4,7 @@
 
 * [Introduction](README.md)
 * [Quick Start](quick-start.md)
-* [CRUD operations](crud-operations.md)
+* [List or create products](crud-operations.md)
 * [Access products using external ids](access-using-external-id.md)
 * [Full text search](full-text-search.md)
 * [POS sync](pos-sync.md)

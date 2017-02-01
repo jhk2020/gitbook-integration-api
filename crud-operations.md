@@ -1,4 +1,4 @@
-# CRUD operations
+# List or create operations
 
 ## List all store products
 
