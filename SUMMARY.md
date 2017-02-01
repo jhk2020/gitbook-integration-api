@@ -1,6 +1,6 @@
 # Summary
 
-## Tutorial
+## Guide
 
 * [Introduction](README.md)
 * [Quick Start](quick-start.md)
