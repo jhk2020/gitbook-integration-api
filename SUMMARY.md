@@ -13,5 +13,4 @@
 
 * [Endpoints](endpoints.md)
 * [Structs](structs.md)
-* [Defining Methods](methods.md)
 
