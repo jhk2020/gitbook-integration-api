@@ -17,8 +17,8 @@ echo 'logged in successfully'
 import requests
 
 def login():
-    response = requests.post('htts://integration-test.gettipsi.com/api/rest/v001/login
-    ', {'username': 'USERNAME', 'password': 'PASSWORD'})
+    login_url = 'htts://integration-test.gettipsi.com/api/rest/v001/login'
+    response = requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
     
     assert response.status_code == 200, 'Authentication failed'
     
