@@ -1,19 +1,18 @@
-	{
-	"plugins": ["theme-api"],
-	"pluginsConfig": {
-		"theme-api": {
-			"languages": [{
-				"lang": "bash",
-				"name": "bash",
-				"default": true
-				
-			}, {
-				"lang": "python",
-				"name": "Python"
-			}, {
-				"lang": "cs",
-				"name": "C#"
-			}]
-		}
-	}
+{
+   "plugins": ["theme-api"],
+   "pluginsConfig": {
+       "theme-api": {
+           "languages": [
+             {"lang": "bash",
+             "name": "bash",
+             "default": true},
+             
+             {"lang": "python",
+             "name": "Python"},
+             
+             {"lang": "cs",
+             "name": "C#"}
+             ]
+         }
+     }
 }
