@@ -27,8 +27,7 @@ print('logged in successfully')
 ```
 {% endmethod %}
 
-If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header, please see example below:
-
+If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
 {% method %}
 {% sample lang="bash" %}
 Will use previously created cookie.txt file and request a list of wines
