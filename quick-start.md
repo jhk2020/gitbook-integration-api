@@ -1,5 +1,6 @@
 # Quick Start
 
+Before calling private APIs, you should create an authenticated session. It’s cookie-based, so library needs to save cookies and pass them back with continuous calls, in most programming languages it will be done automatically, so nothing complicated.
 
 * EXAMPLE *
 
