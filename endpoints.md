@@ -27,7 +27,7 @@ Same, as [Sync Inventory Endpoint](#sync-inventory), except will clear inventory
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/wine |
 | --- | --- |
 | Method | GET |
-| GET Params | List of fields for each struct [inventory structs](#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables |
+| GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables |
 
 ```
 https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/wine?wine_fields=id,winery,region&inventory_fields=id,wine&winery_fields=id,name&region_fields=id,name,description,image_url
@@ -37,14 +37,14 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/wine?wine_fields=id,win
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/drink |
 | --- | --- |
 | Method | GET |
-| GET Params | List of fields for each struct [inventory structs](#base-inventory-struct), similar to wine list. |
+| GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct), similar to wine list. |
 
 
 ## Create Wine Inventory
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/wine |
 | --- | --- |
 | Method | POST |
-| POST Params | JSON without nested fields [inventory structs](#base-inventory-struct).|
+| POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct).|
 
 Minimal parameters for wine: `barcodes`, `external_id`, `wine_id`
 
@@ -74,7 +74,7 @@ Minimal parameters for wine: `barcodes`, `external_id`, `wine_id`
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/drink |
 | --- | --- |
 | Method | POST |
-| POST Params | JSON without nested fields [inventory structs](#base-inventory-struct), similar to wine list. |
+| POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct), similar to wine list. |
 
 Minimal parameters for wine: `barcodes`, `external_id`, `drink_id`
 
@@ -83,21 +83,21 @@ Minimal parameters for wine: `barcodes`, `external_id`, `drink_id`
 | URL | https://DOMAIN/api/rest/v001/food |
 | --- | --- |
 | Method | GET |
-| GET Params | "food_fields" - list of fields for food struct [food structs](#food-struct). |
+| GET Params | "food_fields" - list of fields for food struct [food structs](/structs.md#food-struct). |
 
 
 ## List Wine Styles
 | URL | https://DOMAIN/api/rest/v001/wine_style |
 | --- | --- |
 | Method | GET |
-| GET Params | "style_fields" - list of fields for wine style struct [wine style structs](#wine-style-struct). |
+| GET Params | "style_fields" - list of fields for wine style struct [wine style structs](/structs.md#wine-style-struct). |
 
 
 ## Get Product By Barcode
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/barcode/BARCODE |
 | --- | --- |
 | Method | GET |
-| GET Params | List of fields for each struct [inventory structs](#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables. |
+| GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables. |
 
 ### Example:
 ```
@@ -108,7 +108,7 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fi
 | URL | https://DOMAIN/api/rest/v001/fts/ |
 | --- | --- |
 | Method | GET |
-| GET Params | query - search query, [fts struct fields](#fts-struct) |
+| GET Params | query - search query, [fts struct fields](/structs.md#fts-struct) |
 
 ### Example
 
