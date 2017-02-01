@@ -14,7 +14,6 @@ echo 'logged in successfully'
 
 {% sample lang="python" %}
 ```python
-
 import requests
 
 def login():
