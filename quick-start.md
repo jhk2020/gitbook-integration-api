@@ -31,6 +31,7 @@ print('logged in successfully')
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header, please see example below:
 
 {% method %}
+{% sample lang="bash" %}
 Will use previously created cookie.txt file and request a list of wines
 ```bash
 curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,wine&wine_fields=id,name,vintage
