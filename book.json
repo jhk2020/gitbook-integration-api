@@ -4,14 +4,14 @@
 		"theme-api": {
 			"languages": [{
 				"lang": "bash",
-				"name": "bash",
+				"name": "bash"
 				
 			}, {
 				"lang": "python",
-				"name": "Python",
+				"name": "Python"
 			}, {
 				"lang": "cs",
-				"name": "C#",
+				"name": "C#"
 			}]
 		}
 	}
