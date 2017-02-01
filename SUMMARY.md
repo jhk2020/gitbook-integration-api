@@ -3,6 +3,7 @@
 ## Overview
 
 * [Introduction](README.md)
+* [Quick Start](quick-start.md)
 
 ## Methods
 

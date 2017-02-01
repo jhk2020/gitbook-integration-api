@@ -13,5 +13,4 @@ Supported operations described below:
   * Full text search across Tipsi database
   * POS synchronization
 
-
-
+Our integration server domain is **integration.gettipsi.com**, we also provide a separate sandbox for experiments - **integration-test.gettipsi.com**, on that domain you can play with API without worries to accidentally break anything.
