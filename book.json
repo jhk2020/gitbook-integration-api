@@ -3,12 +3,15 @@
 	"pluginsConfig": {
 		"theme-api": {
 			"languages": [{
-				"lang": "js",
-				"name": "JavaScript",
-				"default": true
+				"lang": "bash",
+				"name": "bash",
+				
 			}, {
-				"lang": "go",
-				"name": "Go"
+				"lang": "python",
+				"name": "Python",
+			}, {
+				"lang": "cs",
+				"name": "C#",
 			}]
 		}
 	}
