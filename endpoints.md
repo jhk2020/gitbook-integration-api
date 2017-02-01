@@ -13,7 +13,7 @@ It's possible to pass params both as JSON or POST params
 | URL | https://DOMAIN/api/rest/v001/store/STORE ID/barcode/sync |
 | --- | --- |
 | Method | PATCH |
-| Request Content | JSON encoded array list of [inventory structs 2](/structs.md). Each struct has to contain "barcode" param, which will be used to lookup related item in inventory. Unnecessary params can be omitted, in that case they will not be updated. By the way, as barcode is used to lookup inventory, inventory "id" param is prohibited here due to the request will be ambiguous, thus trying to use it will cause error with HTTP respone 400. |
+| Request Content | JSON encoded array list of [inventory structs](/structs.md#base-inventory-struct). Each struct has to contain "barcode" param, which will be used to lookup related item in inventory. Unnecessary params can be omitted, in that case they will not be updated. By the way, as barcode is used to lookup inventory, inventory "id" param is prohibited here due to the request will be ambiguous, thus trying to use it will cause error with HTTP respone 400. |
 
 
 ## Sync Inventory With Clearing
