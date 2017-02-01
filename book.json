@@ -4,7 +4,8 @@
 		"theme-api": {
 			"languages": [{
 				"lang": "bash",
-				"name": "bash"
+				"name": "bash",
+				"default": true
 				
 			}, {
 				"lang": "python",
