@@ -13,7 +13,9 @@ Before calling private APIs, you should create an authenticated session. It’s 
 import requests
 
 login_url = 'https://integration-test.gettipsi.com/api/rest/v001/login'
-response = requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
+
+s = requests.Session()
+response = s.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
 
 if response.status_code == 200:
     print('Logged in successfully')
@@ -29,15 +31,11 @@ If response status code is 200, you logged in successfully. Once it happened, an
 
 {% sample lang="python" %}
 ```python
-# Should login first
-requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
-
-# Fetch products
 url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
 params = {'inventory_fields': 'id,barcodes,wine',
          'wine_fields': 'id,name,vintage'}
          
-products = requests.get(url, params).json()
+products = s.get(url, params).json()
 ```
 {% endmethod %}
 
