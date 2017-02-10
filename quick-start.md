@@ -5,6 +5,9 @@ Before calling private APIs, you should create an authenticated session. It’s 
 
 {% method %}
 
+{% sample lang="postman" %}
+![](/assets/login.png)
+
 {% sample lang="bash" %}
 The call below will perform POST to login endpoint and create a cookie.txt file:
 ```bash
@@ -12,9 +15,6 @@ echo '{"username": "USERNAME", "password": "PASSWORD"}' > params.json
 curl -c cookie.txt -vX POST htts://integration-test.gettipsi.com/api/rest/v001/login -d @params.json
 echo 'logged in successfully'
 ```
-{% sample lang="postman" %}
-![](/assets/login.png)
-
 {% sample lang="python" %}
 ```python
 import requests
@@ -32,14 +32,14 @@ print('logged in successfully')
 
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
 {% method %}
+{% sample lang="postman" %}
+![](/assets/list-wine-inventory.png)
+
 {% sample lang="bash" %}
 Will use previously created cookie.txt file and request a list of wines
 ```bash
 curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,wine&wine_fields=id,name,vintage
 ```
-
-{% sample lang="postman" %}
-![](/assets/list-wine-inventory.png)
 
 {% sample lang="python" %}
 ```python
