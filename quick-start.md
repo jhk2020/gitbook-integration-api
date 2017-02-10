@@ -14,8 +14,8 @@ import requests
 
 login_url = 'https://integration-test.gettipsi.com/api/rest/v001/login'
 
-s = requests.Session()
-response = s.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
+session = requests.Session()
+response = session.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
 
 if response.status_code == 200:
     print('Logged in successfully')
@@ -35,7 +35,7 @@ url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
 params = {'inventory_fields': 'id,barcodes,wine',
          'wine_fields': 'id,name,vintage'}
          
-products = s.get(url, params).json()
+products = session.get(url, params).json()
 ```
 {% endmethod %}
 
