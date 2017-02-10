@@ -29,15 +29,15 @@ If response status code is 200, you logged in successfully. Once it happened, an
 
 {% sample lang="python" %}
 ```python
-def fetch_wines():
-    url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
-    response = requests.get(url,
-        {'inventory_fields': 'id,barcodes,wine',
-        'wine_fields': 'id,name,vintage'})
-    return response.json()
+# Should login first
+requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
 
-login()
-fetch_wines()
+# Fetch products
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
+params = {'inventory_fields': 'id,barcodes,wine',
+         'wine_fields': 'id,name,vintage'}
+         
+products = requests.get(url, params).json()
 ```
 {% endmethod %}
 
