@@ -8,25 +8,17 @@ Before calling private APIs, you should create an authenticated session. It’s 
 {% sample lang="postman" %}
 ![](/assets/login.png)
 
-{% sample lang="bash" %}
-The call below will perform POST to login endpoint and create a cookie.txt file:
-```bash
-echo '{"username": "USERNAME", "password": "PASSWORD"}' > params.json
-curl -c cookie.txt -vX POST htts://integration-test.gettipsi.com/api/rest/v001/login -d @params.json
-echo 'logged in successfully'
-```
 {% sample lang="python" %}
 ```python
 import requests
 
-def login():
-    login_url = 'htts://integration-test.gettipsi.com/api/rest/v001/login'
-    response = requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
-    
-    assert response.status_code == 200, 'Authentication failed'
-    
-login()
-print('logged in successfully')
+login_url = 'htts://integration-test.gettipsi.com/api/rest/v001/login'
+response = requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
+
+if response.status_code == 200:
+    print('Logged in successfully')
+else:
+    print('Login failed')        
 ```
 {% endmethod %}
 
@@ -34,12 +26,6 @@ If response status code is 200, you logged in successfully. Once it happened, an
 {% method %}
 {% sample lang="postman" %}
 ![](/assets/list-wine-inventory.png)
-
-{% sample lang="bash" %}
-Will use previously created cookie.txt file and request a list of wines
-```bash
-curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,wine&wine_fields=id,name,vintage
-```
 
 {% sample lang="python" %}
 ```python
