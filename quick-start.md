@@ -25,15 +25,16 @@ else:
 
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
 {% method %}
-In the given example, store id is 19771
+In the given example store id is 19771, please change it to your value providden by Tipsi.
 {% sample lang="postman" %}
 ![](/assets/list-wine-inventory.png)
 
 {% sample lang="python" %}
 ```python
 url = 'https://integration-test.gettipsi.com/api/rest/v001/store/19771/wine'
-params = {'inventory_fields': 'id,barcodes,wine',
-         'wine_fields': 'id,name,vintage'}
+params = {'inventory_fields': 'id,barcodes,external_id,wine',
+         'wine_fields': 'id,name,vintage,country',
+         'country_fields': 'id,name'}
          
 products = session.get(url, params).json()
 ```
