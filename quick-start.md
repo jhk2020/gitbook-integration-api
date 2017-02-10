@@ -4,6 +4,7 @@ Our API is RESTful, so any programming language will support interaction, but th
 Before calling private APIs, you should create an authenticated session. It’s cookie-based, so library needs to save cookies and pass them back with continuous calls, in most programming languages it will be done automatically, so nothing complicated.
 
 {% method %}
+
 {% sample lang="bash" %}
 The call below will perform POST to login endpoint and create a cookie.txt file:
 ```bash
@@ -11,6 +12,8 @@ echo '{"username": "USERNAME", "password": "PASSWORD"}' > params.json
 curl -c cookie.txt -vX POST htts://integration-test.gettipsi.com/api/rest/v001/login -d @params.json
 echo 'logged in successfully'
 ```
+{% sample lang="postman" %}
+![](/assets/login.png)
 
 {% sample lang="python" %}
 ```python
@@ -34,6 +37,9 @@ Will use previously created cookie.txt file and request a list of wines
 ```bash
 curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,wine&wine_fields=id,name,vintage
 ```
+
+{% sample lang="postman" %}
+![](/assets/list-wine-inventory.png)
 
 {% sample lang="python" %}
 ```python
