@@ -8,9 +8,28 @@ GET request to [/api/rest/v001/store/STORE_ID/wine
 ) endpoint will list all the available products. The endpoints are paginated - they will return a thousand results per page. You can modify page size by passing page_size parameter, but values larger than a thousand will be ignored.
 By the way, all GET APIs are lazy - by default they will only return object id. Fields should be requested explicitly as GET parameter - a comma separated list of fields for each struct, see the full structs description [here](/struts.md).
 
-The example below requests inventory id, barcodes and wine fields, and nested fields of wine - wine id, name and vintage:
+{% method %}
+The example below requests wine inventory and nested fields (ids, barcodes, vintage and etc):
+{% sample lang="postman" %}
+![](/assets/list-wine-inventory.png)
 
-https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,wine&wine_fields=id,name,vintage
+{% sample lang="bash" %}
+Will use previously created cookie.txt file and request a list of wines
+```bash
+curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name
+```
+
+{% sample lang="python" %}
+```python
+
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
+response = requests.get(url,
+    {'inventory_fields': 'id,barcodes,external_id,wine',
+    'wine_fields': 'id,name,vintage,country',
+    'country_fields': 'id,name'})
+results= response.json()
+{% endmethod %}
+
 
 See [API reference](/endpoints.md#list-wine-inventory) for more details.
 
