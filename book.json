@@ -4,9 +4,12 @@
        "theme-api": {
            "theme": "dark",
            "languages": [
-             {"lang": "bash",
-             "name": "bash",
+             {"lang": "postman",
+             "name": "Postman",
              "default": true},
+             
+             {"lang": "bash",
+             "name": "bash"},
              
              {"lang": "python",
              "name": "Python"},
