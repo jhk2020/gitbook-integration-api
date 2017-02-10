@@ -27,7 +27,7 @@ else:
 
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
 {% method %}
-The sample below will perform GET request on list wine endpoint - it will return a paginated results set of all the available wines in store. The used store id is 19771, please change it to your value providden by Tipsi.
+The sample below will perform GET request on list wine endpoint - it will return a paginated results set of all the available wines in store. The used store id is 19771, please change it to your value provided by Tipsi.
 {% sample lang="postman" %}
 ![](/assets/list-wine-inventory.png)
 
