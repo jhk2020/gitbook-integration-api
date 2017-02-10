@@ -4,6 +4,8 @@ Our API is RESTful, so any programming language will support interaction, but th
 Before calling private APIs, you should create an authenticated session. It’s cookie-based, so library needs to save cookies and pass them back with continuous calls, in most programming languages it will be done automatically, so nothing complicated.
 
 {% method %}
+
+This example will perform POST to login endpoint, call it once when you start a new session.
 {% sample lang="postman" %}
 ![](/assets/login.png)
 
@@ -25,7 +27,7 @@ else:
 
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
 {% method %}
-In the given example store id is 19771, please change it to your value providden by Tipsi.
+The sample below will perform GET request on list wine endpoint - it will return a paginated results set of all the available wines in store. The used store id is 19771, please change it to your value providden by Tipsi.
 {% sample lang="postman" %}
 ![](/assets/list-wine-inventory.png)
 
