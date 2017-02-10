@@ -8,9 +8,6 @@
              "name": "Postman",
              "default": true},
              
-             {"lang": "bash",
-             "name": "bash"},
-             
              {"lang": "python",
              "name": "Python"},
              
