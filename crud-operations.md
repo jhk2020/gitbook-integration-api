@@ -13,18 +13,13 @@ The example below requests wine inventory and nested fields (ids, barcodes, vint
 {% sample lang="postman" %}
 ![](/assets/list-wine-inventory.png)
 
-{% sample lang="bash" %}
-```bash
-curl -b cookie.txt https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name
-```
-
 {% sample lang="python" %}
 ```python
 url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine'
 params = {'inventory_fields': 'id,barcodes,external_id,wine',
     'wine_fields': 'id,name,vintage,country',
     'country_fields': 'id,name'}
-result = requests.get(url, params).json()
+result = session.get(url, params=params).json()
 ```
 {% endmethod %}
 
