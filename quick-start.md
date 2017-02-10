@@ -12,7 +12,7 @@ Before calling private APIs, you should create an authenticated session. It’s 
 ```python
 import requests
 
-login_url = 'htts://integration-test.gettipsi.com/api/rest/v001/login'
+login_url = 'https://integration-test.gettipsi.com/api/rest/v001/login'
 response = requests.post(login_url, {'username': 'USERNAME', 'password': 'PASSWORD'})
 
 if response.status_code == 200:
