@@ -1,6 +1,6 @@
 # Quick Start
 
-Our API is RESTful, so any programming language will support interaction, but the document will provide examples for curl, Python and C# (coming soon).
+Our API is RESTful, so any programming language will support interaction, but the document will provide examples for Postman (a plugin for Chrome), Python and C# (coming soon).
 Before calling private APIs, you should create an authenticated session. It’s cookie-based, so library needs to save cookies and pass them back with continuous calls, in most programming languages it will be done automatically, so nothing complicated.
 
 {% method %}
