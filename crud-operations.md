@@ -32,6 +32,19 @@ POST request to [/api/rest/v001/store/STORE_ID/wine
 ) or [/api/rest/v001/store/STORE_ID/drink](/endpoints.md#list-drink-inventory
 ) endpoint will create a new inventory item, wine_id or drink_id parameter is required. Usually you get wine_id or drink_id through full text search across Tipsi database. Other required parameters - barcodes (can be an empty list, though) and external id (item ID in your database). Params should be formatted as JSON dictionary.
 
+{% method %}
+{% sample lang="postman" %}
+![](/assets/add-product.png)
+
+{% sample lang="python" %}
+```python
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/drink'
+params = {'drink_id': 6755, "in_stock": 17, "barcodes": [], "external_id": 10007}
+result = session.post(url, params=params).json()
+```
+{% endmethod %}
+
+
 See [API reference](/endpoints.md#create-wine-inventory) for more details.
 
 
