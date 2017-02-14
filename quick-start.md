@@ -26,7 +26,27 @@ else:
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+using System;
+using System.Net.Http;
+using System.Text;
+
+
+
+const string ApplicationJSONMediaType = "application/json";
+const string loginUrl = @"https://integration-test.gettipsi.com/api/rest/v001/login";
+
+HttpClient httpClient = new HttpClient { BaseAddress = new Uri(loginUrl) };
+HttpResponseMessage responce = httpClient.PostAsync(loginUrl, new StringContent("{\"username\": \"USERNAME\", \"password\": \"PASSWORD\"}", Encoding.UTF8, ApplicationJSONMediaType)).Result;
+
+try
+{
+    responce.EnsureSuccessStatusCode();
+    Console.WriteLine("Logged in successfully");
+}
+catch (Exception)
+{
+    Console.WriteLine("Login failed");
+}
 ```
 {% endmethod %}
 
