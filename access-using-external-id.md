@@ -22,6 +22,12 @@ params = {'inventory_fields': 'id,external_id,barcodes,wine,drink',
     'drink_fields': 'id,name'}
 result = session.get(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 
@@ -42,6 +48,12 @@ url = 'https://integration-test.gettipsi.com/api/rest/v001/store/19771/ext/10007
 params = {'in_stock': 33}
 result = session.patch(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 ## Delete product
@@ -57,6 +69,12 @@ Perform DELETE request to product URL https://integration-test.gettipsi.com/api/
 url = 'https://integration-test.gettipsi.com/api/rest/v001/store/19771/ext/10007'
 result = session.delete(url).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 For successful deletion 204 "No Content" HTTP status expected. 
