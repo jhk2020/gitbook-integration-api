@@ -23,6 +23,11 @@ if response.status_code == 200:
 else:
     print('Login failed')        
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
 {% endmethod %}
 
 If response status code is 200, you logged in successfully. Once it happened, any further call will contain session ID in cookies header.
@@ -39,6 +44,11 @@ params = {'inventory_fields': 'id,barcodes,external_id,wine',
          'country_fields': 'id,name'}
          
 products = session.get(url, params).json()
+```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
 ```
 {% endmethod %}
 
