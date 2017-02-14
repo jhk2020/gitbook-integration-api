@@ -47,3 +47,16 @@ result = session.patch(url, params=params).json()
 ## Delete product
 
 Perform DELETE request to product URL https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/ext/EXTERNAL_ID
+
+{% method %}
+{% sample lang="postman" %}
+![](/assets/delete-product-by-ext-id.png)
+
+{% sample lang="python" %}
+```python
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/19771/ext/10007'
+result = session.delete(url).json()
+```
+{% endmethod %}
+
+For successful deletion 204 "No Content" HTTP status expected. 
