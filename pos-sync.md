@@ -21,7 +21,7 @@ url = 'http://integration-test.gettipsi.com/api/rest/v001/store/19771/sync'
 
 batch = [{'external_id': 10003, 'barcodes': ['00123345'], 'in_stock': 12}, 
     {'external_id': 10004, 'barcodes': ['08234123'], 'in_stock': 12},
-    {'external_id': 10005, 'barcodes': ['08123456'], in_stock: 33}
+    {'external_id': 10005, 'barcodes': ['08123456'], in_stock: 33}]
 
 response = requests.patch(url, batch)
 ```
