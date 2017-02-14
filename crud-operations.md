@@ -38,6 +38,7 @@ POST request to [/api/rest/v001/store/STORE_ID/wine
 ) endpoint will create a new inventory item, wine_id or drink_id parameter is required. Usually you get wine_id or drink_id through full text search across Tipsi database. Other required parameters - barcodes (can be an empty list, though) and external id (item ID in your database). Params should be formatted as JSON dictionary.
 
 {% method %}
+The sample will create a new inventory item with assigned drink id 6755 and empty barcodes list. Barcodes can be empty, but the parameter is required.
 {% sample lang="postman" %}
 ![](/assets/add-product.png)
 
