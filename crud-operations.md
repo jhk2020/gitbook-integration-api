@@ -21,6 +21,11 @@ params = {'inventory_fields': 'id,barcodes,external_id,wine',
     'country_fields': 'id,name'}
 result = session.get(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
 {% endmethod %}
 
 
@@ -42,6 +47,12 @@ url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/drink'
 params = {'drink_id': 6755, "in_stock": 17, "barcodes": [], "external_id": 10007}
 result = session.post(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 
