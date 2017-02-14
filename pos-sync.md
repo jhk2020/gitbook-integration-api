@@ -11,7 +11,8 @@ There are two kind of sync commands - sync and sync_clear. They are almost the s
 * [sync_clear](/endpoints.md#sync-inventory-with-clearing) performs UPSERT and marking all the unpassed products as out of stock (without deleting them).
 
 {% method %}
-Searching product by "Merlot" keyword
+
+The sample will update items with external ids 10003 and 10004, and will create a new item with ext id 10005.
 {% sample lang="postman" %}
 ![](/assets/sync-products.png)
 
