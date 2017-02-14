@@ -7,17 +7,31 @@ Sync can be enabled for next purposes:
 * To have all the products using external ids - in that case processed wine/drink information can be easily pulled back to customer programmatically.
 
 There are two kind of sync commands - sync and sync_clear. They are almost the same:
-* [sync](/endpoints.md#sync-inventory) performs UPSERT upon passed products
+* [sync](/endpoints.md#sync-inventory) performs UPSERT upon passed products.
 * [sync_clear](/endpoints.md#sync-inventory-with-clearing) performs UPSERT and marking all the unpassed products as out of stock (without deleting them).
 
-```python
-url = 'http://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/sync'
+{% method %}
+Searching product by "Merlot" keyword
+{% sample lang="postman" %}
+![](/assets/sync-clear-products.png)
 
-batch = [{'external_id': 111, 'barcodes': ['00123345'], 'in_stock': 12}, 
-         {'external_id': 222, 'barcodes': ['08234123'], 'in_stock': 12}]
+{% sample lang="python" %}
+```python
+url = 'http://integration-test.gettipsi.com/api/rest/v001/store/19771/sync'
+
+batch = [{'external_id': 10003, 'barcodes': ['00123345'], 'in_stock': 12}, 
+    {'external_id': 10004, 'barcodes': ['08234123'], 'in_stock': 12},
+    {'external_id': 10005, 'barcodes': ['08123456'], in_stock: 33}
 
 response = requests.patch(url, batch)
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
+{% endmethod %}
 
 See [API reference](/endpoints.md#sync-inventory) for more details.
 
