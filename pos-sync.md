@@ -13,7 +13,7 @@ There are two kind of sync commands - sync and sync_clear. They are almost the s
 {% method %}
 Searching product by "Merlot" keyword
 {% sample lang="postman" %}
-![](/assets/sync-clear-products.png)
+![](/assets/sync-products.png)
 
 {% sample lang="python" %}
 ```python
@@ -21,7 +21,7 @@ url = 'http://integration-test.gettipsi.com/api/rest/v001/store/19771/sync'
 
 batch = [{'external_id': 10003, 'barcodes': ['00123345'], 'in_stock': 12}, 
     {'external_id': 10004, 'barcodes': ['08234123'], 'in_stock': 12},
-    {'external_id': 10005, 'barcodes': ['08123456'], in_stock: 33}]
+    {'external_id': 10005, 'barcodes': ['08123456'], 'in_stock': 33}]
 
 response = requests.patch(url, batch)
 ```
