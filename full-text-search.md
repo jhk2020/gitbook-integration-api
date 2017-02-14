@@ -16,6 +16,12 @@ params = {'query': 'merlot',
     'drink_fields': 'id,name'}
 result = session.get(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 
@@ -33,6 +39,12 @@ params = {'query': 'absolut',
     'drink_fields': 'id,name'}
 result = session.get(url, params=params).json()
 ```
+
+{% sample lang="cs" %}
+```cs
+// coming soon
+```
+
 {% endmethod %}
 
 
