@@ -33,10 +33,11 @@ using System.Text;
 
 
 const string ApplicationJSONMediaType = "application/json";
-const string loginUrl = @"https://integration-test.gettipsi.com/api/rest/v001/login";
+const string BaseUrl = "https://integration-test.gettipsi.com/";
+const string LoginPath = @"api/rest/v001/login";
 
-HttpClient httpClient = new HttpClient { BaseAddress = new Uri(loginUrl) };
-HttpResponseMessage responce = httpClient.PostAsync(loginUrl, new StringContent("{\"username\": \"USERNAME\", \"password\": \"PASSWORD\"}", Encoding.UTF8, ApplicationJSONMediaType)).Result;
+HttpClient httpClient = new HttpClient { BaseAddress = new Uri(BaseUrl) };
+HttpResponseMessage responce = httpClient.PostAsync(LoginPath, new StringContent("{\"username\": \"USERNAME\", \"password\": \"PASSWORD\"}", Encoding.UTF8, ApplicationJSONMediaType)).Result;
 
 try
 {
@@ -68,7 +69,21 @@ products = session.get(url, params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+
+const string winePath = "api/rest/v001/store/19771/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name";
+HttpResponseMessage wineResponce = httpClient.GetAsync(winePath).Result;
+
+try
+{
+    wineResponce.EnsureSuccessStatusCode();
+    string wineData = wineResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(wineData);
+}
+catch (Exception)
+{
+    Console.WriteLine("Requst failed");
+}
+
 ```
 {% endmethod %}
 
