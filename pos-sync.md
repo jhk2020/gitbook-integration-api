@@ -18,7 +18,7 @@ The sample will update items with external ids 10003 and 10004, and will create 
 
 {% sample lang="python" %}
 ```python
-url = 'http://integration-test.gettipsi.com/api/rest/v001/store/19771/sync'
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/19771/ext/sync'
 
 batch = [{'external_id': 10003, 'barcodes': ['00123345'], 'in_stock': 12}, 
     {'external_id': 10004, 'barcodes': ['08234123'], 'in_stock': 12},
