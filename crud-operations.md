@@ -24,7 +24,21 @@ result = session.get(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+
+const string winePath = "api/rest/v001/store/19771/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name";
+HttpResponseMessage wineResponce = httpClient.GetAsync(winePath).Result;
+
+try
+{
+    wineResponce.EnsureSuccessStatusCode();
+    string wineData = wineResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(wineData);
+}
+catch (Exception)
+{
+    Console.WriteLine("Requst failed");
+}
+
 ```
 {% endmethod %}
 
