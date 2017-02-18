@@ -19,7 +19,20 @@ result = session.get(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+// Use the same httpClient, which has been created while login
+const string queryMerlotPath = "api/rest/v001/fts?query=merlot&fts_fields=wine,drink&wine_fields=id,name,vintage&drink_fields=id,name";
+HttpResponseMessage queryMerlotResponce = httpClient.GetAsync(queryMerlotPath).Result;
+
+try
+{
+    queryMerlotResponce.EnsureSuccessStatusCode();
+    string searchResult = queryMerlotResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(searchResult);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
 ```
 
 {% endmethod %}
@@ -42,7 +55,20 @@ result = session.get(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+// Use the same httpClient, which has been created while login
+const string queryAbsolutePath = "api/rest/v001/fts?query=absolute&fts_fields=wine,drink&wine_fields=id,name,vintage&drink_fields=id,name";
+HttpResponseMessage queryAbsoluteResponce = httpClient.GetAsync(queryAbsolutePath).Result;
+
+try
+{
+    queryAbsoluteResponce.EnsureSuccessStatusCode();
+    string searchResult = queryAbsoluteResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(searchResult);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
 ```
 
 {% endmethod %}
