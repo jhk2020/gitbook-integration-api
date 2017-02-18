@@ -25,7 +25,21 @@ result = session.get(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+// Use the same httpClient, which has been created while login
+const string productPath = "api/rest/v001/store/19771/ext/10007";
+HttpResponseMessage getProductResponce = httpClient.GetAsync(productPath).Result;
+
+try
+{
+    getProductResponce.EnsureSuccessStatusCode();
+    string productData = getProductResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(productData);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
+
 ```
 
 {% endmethod %}
@@ -51,7 +65,25 @@ result = session.patch(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+// Use the same httpClient, which has been created while login
+const string productPath = "api/rest/v001/store/19771/ext/10007";
+HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("PATCH"), productPath)
+{
+    Content = new StringContent("{\"in_stock\": 33}", Encoding.UTF8, ApplicationJSONMediaType)
+};
+
+HttpResponseMessage patchProductResponce = httpClient.SendAsync(request).Result;
+
+try
+{
+    patchProductResponce.EnsureSuccessStatusCode();
+    string productData = patchProductResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(productData);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
 ```
 
 {% endmethod %}
@@ -72,7 +104,20 @@ result = session.delete(url).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+
+// Use the same httpClient, which has been created while login
+const string productPath = "api/rest/v001/store/19771/ext/10007";
+HttpResponseMessage deleteProductResponce = httpClient.DeleteAsync(productPath).Result;
+
+try
+{
+    deleteProductResponce.EnsureSuccessStatusCode();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
+
 ```
 
 {% endmethod %}
