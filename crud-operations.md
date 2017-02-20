@@ -25,7 +25,7 @@ result = session.get(url, params=params).json()
 {% sample lang="cs" %}
 ```cs
 
-const string winePath = "api/rest/v001/store/19771/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name";
+const string winePath = "api/rest/v001/store/STORE_ID/wine?inventory_fields=id,barcodes,external_id,wine&wine_fields=id,name,vintage,country&country_fields=id,name";
 HttpResponseMessage wineResponce = httpClient.GetAsync(winePath).Result;
 
 try
@@ -65,7 +65,21 @@ result = session.post(url, params=params).json()
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+const string CreateInventoryItemPath = @"api/rest/v001/store/STORE_ID/wine";
+
+// Make sure the wine_id (drink_id) exists.
+HttpResponseMessage createInventoryItemResponce = httpClient.PostAsync(CreateInventoryItemPath, new StringContent("{\"wine_id\": 653842, \"in_stock\": 17, \"barcodes\": [], \"external_id\": 10007}", Encoding.UTF8, ApplicationJSONMediaType)).Result;
+
+try
+{
+    createInventoryItemResponce.EnsureSuccessStatusCode();
+    string createdInventoryItemData = createInventoryItemResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(createdInventoryItemData);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
 ```
 
 {% endmethod %}
