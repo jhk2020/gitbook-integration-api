@@ -13,7 +13,7 @@
 | bottle_size | Bottle size in ml, int |
 | in_stock | Amount of items in stock (regular price), int |
 | updated | Last inventory update date and time |
-| pos_item_name | Product name in POS system (write-only param at the moment) |
+| pos_item_name | Product name in POS system |
 
 Param name: **inventory_fields**
 
