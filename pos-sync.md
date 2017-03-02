@@ -29,7 +29,24 @@ response = requests.patch(url, batch)
 
 {% sample lang="cs" %}
 ```cs
-// coming soon
+string syncPath = "api/rest/v001/store/19771/ext/sync";
+HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("PATCH"), syncPath)
+{
+    Content = new StringContent("[{\"external_id\": 10003, \"barcodes\": [\"00123345\"], \"in_stock\": 12}, {\"external_id\": 10004, \"barcodes\": [\"08234123\"], \"in_stock\": 12}, {\"external_id\": 10005, \"barcodes\": [\"08123456\"], \"in_stock\": 33}]", Encoding.UTF8, ApplicationJSONMediaType)
+};
+
+HttpResponseMessage syncResponce = httpClient.SendAsync(request).Result;
+
+try
+{
+    syncResponce.EnsureSuccessStatusCode();
+    string syncData = syncResponce.Content.ReadAsStringAsync().Result;
+    Console.WriteLine(syncData);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
 ```
 
 {% endmethod %}
