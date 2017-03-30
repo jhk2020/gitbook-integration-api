@@ -1,14 +1,14 @@
 # Create task
 
-*Endpoints are described here require `tasks creation` option enabled for your store, so contact Tipsi if you have errors.*
+*To create tasks via integration API you should have this option enabled by Tipsi team. Please contact support if API doesn't work for you*
 
 ## Upload image
 
-Use POST request to `/api/rest/v001/store/STORE_ID/image_upload` to upload images for further usage in task creation endpoint.
+Perform POST request to `/api/rest/v001/store/STORE_ID/image_upload` to upload image. The returned image URL will be used in `create tasks` API.
 
 
 {% method %}
-Upload image to Tipsi server. Use response url to create tasks.
+Upload image to Tipsi server. The endpoint will return image URL, which can be used later for label tasks creation.
 
 {% sample lang="postman" %}
 ![](/assets/image_upload.png)
@@ -28,7 +28,7 @@ with open('image.png', 'rb') as file_obj:
 You can create task by sending POST to `/api/rest/v001/store/STORE_ID/wine/INVENTORY_ID/create_task` or `/api/rest/v001/store/STORE_ID/drink/INVENTORY_ID/create_task`.
 
 {% method %}
-Create tasks to process item by Tipsi team.
+Create product label processing tasks, those tasks will be processed by Tipsi team.
 
 {% sample lang="postman" %}
 ![](/assets/create_task.png)
