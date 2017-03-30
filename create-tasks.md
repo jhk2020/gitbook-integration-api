@@ -6,7 +6,7 @@ Label processing tasks is a way to match products manually by Tipsi team. It req
 
 Label processing tasks are created in 3 steps:
 
-1. Create inventory [item](/endpoints.md#create-wine-inventory)
+1. Create inventory [item](/endpoints.md#create-wine-inventory) or use the existing one. Tasks creation is only allowed for items in unmatched state.
 2. Upload image (or images)
 3. Create label tasks
 
