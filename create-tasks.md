@@ -1,6 +1,8 @@
 # Label Processing Tasks Guide
 
-*To create tasks via integration API you should have this option enabled by Tipsi team. Please contact support if API doesn't work for you*
+*Note: to create tasks via integration API you should have this option enabled by Tipsi team. Please contact support if API doesn't work for you*
+
+Label processing tasks is a way to match products manually by Tipsi team. It requires product front label picture and optionally back label, for wines it's also recommended to send vintage. If vintage is not send and there is no vintage on wine label, the most recent vintage will be used by default. 
 
 ## Upload image
 
