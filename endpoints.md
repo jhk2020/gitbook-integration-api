@@ -189,4 +189,19 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fi
 ```
 
 
- 
+## Upload image
+
+| URL | /api/rest/v001/store/STORE_ID/image_upload |
+| --- | --- |
+| Method | POST |
+| POST Params | image file in `image` field |
+
+
+## Create task
+
+| WINE URL | /api/rest/v001/store/STORE_ID/{wine,drink}/INVENTORY_ID/create_task |
+| --- | --- |
+| Method | POST |
+| POST Params | front_image, back_image (optional), vintage (optional) |
+
+Returns [inventory structs](/structs.md#base-inventory-struct) with drink_id and wine_id.
