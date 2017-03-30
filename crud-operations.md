@@ -86,5 +86,3 @@ catch (Exception ex)
 
 
 See [API reference](/endpoints.md#create-wine-inventory) for more details.
-
-
