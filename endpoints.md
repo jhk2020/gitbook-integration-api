@@ -1,30 +1,32 @@
 # Endpoints
+
 ## Login Endpoint
+
 It's possible to pass params both as JSON or POST params
 
-
-| URL | https://DOMAIN/api/rest/v001/login |
+| URL | [https://DOMAIN/api/rest/v001/login](https://DOMAIN/api/rest/v001/login) |
 | --- | --- |
 | Method | POST |
 | Params | username, password |
 
-
 ## Sync Inventory
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/ext/sync |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/ext/sync |
 | --- | --- |
 | Method | PATCH |
-| Request Content | JSON encoded array list of [inventory structs](/structs.md#base-inventory-struct). Each struct has to contain "external_id" param, which will be used to lookup related item in inventory. Unnecessary params can be omitted, in that case they will not be updated. By the way, as "external_id" is used to lookup inventory, inventory Tipsi "id" param is prohibited here as the request will look ambiguously, thus trying to use it will cause error with HTTP respone 400. |
-
+| Request Content | JSON encoded array list of [inventory structs](/structs.md#base-inventory-struct). Each struct has to contain "external\_id" param, which will be used to lookup related item in inventory. Unnecessary params can be omitted, in that case they will not be updated. By the way, as "external\_id" is used to lookup inventory, inventory Tipsi "id" param is prohibited here as the request will look ambiguously, thus trying to use it will cause error with HTTP respone 400. |
 
 ## Sync Inventory With Clearing
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/ext/sync_clear
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/ext/sync\_clear |
 | --- | --- |
 | Method | PATCH |
 
-Same, as [Sync Inventory Endpoint](#sync-inventory), except will clear inventory not listed in the batch. It's a safe method as it will just mark in_stock parameter to 0. For real inventory deletion DELETE method should be used upon each inventory item.
+Same, as [Sync Inventory Endpoint](#sync-inventory), except will clear inventory not listed in the batch. It's a safe method as it will just mark in\_stock parameter to 0. For real inventory deletion DELETE method should be used upon each inventory item.
 
 ## List Wine Inventory
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/wine |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/wine |
 | --- | --- |
 | Method | GET |
 | GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables |
@@ -34,19 +36,20 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/wine?wine_fields=id,win
 ```
 
 ## List Drink Inventory
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/drink |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/drink |
 | --- | --- |
 | Method | GET |
 | GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct), similar to wine list. |
 
-
 ## Create Wine Inventory
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/wine |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/wine |
 | --- | --- |
 | Method | POST |
-| POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct).|
+| POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct). |
 
-Minimal parameters for wine: `barcodes`, `external_id`, `wine_id`
+Minimal parameters for wine: `barcodes` and `external_id`. If `wine_id` is not passed, it will create item in unmatched state. Such item doesn't have linked wine, but it's useful when wine should be manually matched by Tipsi team \(see [Label Processing Tasks Guide](/create-tasks.md)\).
 
 ```javascript
 // POST /api/rest/v001/store/38/wine
@@ -71,41 +74,44 @@ Minimal parameters for wine: `barcodes`, `external_id`, `wine_id`
 ```
 
 ## Create Drink Inventory
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/drink |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/drink |
 | --- | --- |
 | Method | POST |
 | POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct), similar to wine list. |
 
-Minimal parameters for wine: `barcodes`, `external_id`, `drink_id`
-
+Minimal parameters for wine: `barcodes` and `external_id`. If `drink_id` is not passed, it will create item in unmatched state. Please see [Label Processing Tasks Guide](/create-tasks.md).
 
 ## List Food
-| URL | https://DOMAIN/api/rest/v001/food |
+
+| URL | [https://DOMAIN/api/rest/v001/food](https://DOMAIN/api/rest/v001/food) |
 | --- | --- |
 | Method | GET |
-| GET Params | "food_fields" - list of fields for food struct [food structs](/structs.md#food-struct). |
-
+| GET Params | "food\_fields" - list of fields for food struct [food structs](/structs.md#food-struct). |
 
 ## List Wine Styles
-| URL | https://DOMAIN/api/rest/v001/wine_style |
+
+| URL | [https://DOMAIN/api/rest/v001/wine\_style](https://DOMAIN/api/rest/v001/wine_style) |
 | --- | --- |
 | Method | GET |
-| GET Params | "style_fields" - list of fields for wine style struct [wine style structs](/structs.md#wine-style-struct). |
-
+| GET Params | "style\_fields" - list of fields for wine style struct [wine style structs](/structs.md#wine-style-struct). |
 
 ## Get Product By Barcode
-| URL | https://DOMAIN/api/rest/v001/store/STORE ID/barcode/BARCODE |
+
+| URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/barcode/BARCODE |
 | --- | --- |
 | Method | GET |
 | GET Params | List of fields for each struct [inventory structs](/structs.md#base-inventory-struct). If not specified which fields to fetch for a given struct, it will contain only "id" parameter. Param name, related to a given struct, listed below struct tables. |
 
 ### Example:
+
 ```
 https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fields=id,winery,region&inventory_fields=id,wine&winery_fields=id,name&region_fields=id,name,description,image_url
 ```
 
 ## Full Text Search
-| URL | https://DOMAIN/api/rest/v001/fts/ |
+
+| URL | [https://DOMAIN/api/rest/v001/fts/](https://DOMAIN/api/rest/v001/fts/) |
 | --- | --- |
 | Method | GET |
 | GET Params | query - search query, [fts struct fields](/structs.md#fts-struct) |
@@ -188,20 +194,19 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fi
  }
 ```
 
-
 ## Upload image
 
-| URL | /api/rest/v001/store/STORE_ID/image_upload |
+| URL | /api/rest/v001/store/STORE\_ID/image\_upload |
 | --- | --- |
 | Method | POST |
 | POST Params | image file in `image` field |
 
-
 ## Create task
 
-| WINE URL | /api/rest/v001/store/STORE_ID/{wine,drink}/INVENTORY_ID/create_task |
+| WINE URL | /api/rest/v001/store/STORE\_ID/{wine,drink}/INVENTORY\_ID/create\_task |
 | --- | --- |
 | Method | POST |
-| POST Params | front_image, back_image (optional), vintage (optional) |
+| POST Params | front\_image, back\_image \(optional\), vintage \(optional\) |
 
-Returns [inventory structs](/structs.md#base-inventory-struct) with drink_id and wine_id.
+Returns [inventory structs](/structs.md#base-inventory-struct) with drink\_id and wine\_id.
+
