@@ -87,4 +87,35 @@ catch (Exception ex)
 
 See [API reference](/endpoints.md#create-wine-inventory) for more details.
 
+## Upload image
 
+Use POST request to `/api/rest/v001/store/STORE_ID/image_upload` to upload images for further usage in task creation endpoint.
+
+*Endpoint requires tasks creation option enabled for your store, so contact Tipsi if you have errors.*
+
+{% method %}
+
+{% sample lang="python" %}
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/image_upload'
+with open('image.png', 'rb') as file_obj:
+    params = {'image': file_obj}
+    result = session.post(url, files=params).json()
+{% endmethod %}
+
+
+## Create task for unmatched inventory item
+
+You can create task by sending POST to `/api/rest/v001/store/STORE_ID/wine/INVENTORY_ID/create_task` or `/api/rest/v001/store/STORE_ID/drink/INVENTORY_ID/create_task`.
+
+*Endpoint requires tasks creation option enabled for your store, so contact Tipsi if you have errors.*
+
+{% method %}
+
+{% sample lang="python" %}
+url = 'https://integration-test.gettipsi.com/api/rest/v001/store/STORE_ID/wine/INVENTORY_ID/create_task'
+data = {'front_image': front_image_url,
+        'back_image': back_image_url,
+        'vintage': '2015'}
+result = session.post(url, data=data).json()
+
+{% endmethod %}
