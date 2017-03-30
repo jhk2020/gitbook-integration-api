@@ -1,4 +1,4 @@
-# Create task
+# Label Processing Tasks Guide
 
 *To create tasks via integration API you should have this option enabled by Tipsi team. Please contact support if API doesn't work for you*
 
