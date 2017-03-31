@@ -36,7 +36,7 @@ with open('image.png', 'rb') as file_obj:
 You can create task by sending POST to `/api/rest/v001/store/STORE_ID/wine/INVENTORY_ID/create_task` or `/api/rest/v001/store/STORE_ID/drink/INVENTORY_ID/create_task`.
 
 {% method %}
-Create product label processing tasks, those tasks will be processed by Tipsi team.
+Create product label processing tasks, those tasks will be processed by Tipsi team. Once label uploaded, it's possible to track its status by checking "status" field of inventory struct.
 
 {% sample lang="postman" %}
 ![](/assets/create_task.png)
