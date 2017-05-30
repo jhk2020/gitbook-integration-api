@@ -7,6 +7,7 @@ It's possible to pass params both as JSON or POST params
 | URL | [https://DOMAIN/api/rest/v001/login](https://DOMAIN/api/rest/v001/login) |
 | --- | --- |
 | Method | POST |
+| Format | JSON |
 | Params | username, password |
 
 ## Sync Inventory
@@ -14,6 +15,7 @@ It's possible to pass params both as JSON or POST params
 | URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/ext/sync |
 | --- | --- |
 | Method | PATCH |
+| Format | JSON |
 | Request Content | JSON encoded array list of [inventory structs](/structs.md#base-inventory-struct). Each struct has to contain "external\_id" param, which will be used to lookup related item in inventory. Unnecessary params can be omitted, in that case they will not be updated. By the way, as "external\_id" is used to lookup inventory, inventory Tipsi "id" param is prohibited here as the request will look ambiguously, thus trying to use it will cause error with HTTP respone 400. |
 
 ## Sync Inventory With Clearing
@@ -21,6 +23,7 @@ It's possible to pass params both as JSON or POST params
 | URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/ext/sync\_clear |
 | --- | --- |
 | Method | PATCH |
+| Format | JSON |
 
 Same, as [Sync Inventory Endpoint](#sync-inventory), except will clear inventory not listed in the batch. It's a safe method as it will just mark in\_stock parameter to 0. For real inventory deletion DELETE method should be used upon each inventory item.
 
@@ -47,6 +50,7 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/wine?wine_fields=id,win
 | URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/wine |
 | --- | --- |
 | Method | POST |
+| Format | JSON |
 | POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct). |
 
 Minimal parameters for wine: `barcodes` and `external_id`. If `wine_id` is not passed, it will create item in unmatched state. Such item doesn't have linked wine, but it's useful when wine should be manually matched by Tipsi team \(see [Label Processing Tasks Guide](/create-tasks.md)\).
@@ -78,6 +82,7 @@ Minimal parameters for wine: `barcodes` and `external_id`. If `wine_id` is not p
 | URL | [https://DOMAIN/api/rest/v001/store/STORE](https://DOMAIN/api/rest/v001/store/STORE) ID/drink |
 | --- | --- |
 | Method | POST |
+| Format | JSON |
 | POST Params | JSON without nested fields [inventory structs](/structs.md#base-inventory-struct), similar to wine list. |
 
 Minimal parameters for wine: `barcodes` and `external_id`. If `drink_id` is not passed, it will create item in unmatched state. Please see [Label Processing Tasks Guide](/create-tasks.md).
@@ -199,13 +204,15 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fi
 | URL | /api/rest/v001/store/STORE\_ID/image\_upload |
 | --- | --- |
 | Method | POST |
-| POST Params | image file in `image` field |
+| Format | "multipart/form-data" |
+| POST Params | Image file encoded as standard "multipart/form-data" to `image` field |
 
 ## Create task
 
-| WINE URL | /api/rest/v001/store/STORE\_ID/{wine,drink}/INVENTORY\_ID/create\_task |
+| WINE URL | /api/rest/v001/store/STORE\_ID/{wine,drink}/TIPSI\_INVENTORY\_ID/create\_task |
 | --- | --- |
 | Method | POST |
+| Format | JSON |
 | POST Params | front\_image, back\_image \(optional\), vintage \(optional\) |
 
 Returns [inventory structs](/structs.md#base-inventory-struct) with drink\_id and wine\_id.
