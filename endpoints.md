@@ -205,7 +205,7 @@ https://DOMAIN.gettipsi.com/api/rest/v001/store/STORE ID/barcode/BARCODE?wine_fi
 | --- | --- |
 | Method | POST |
 | Format | "multipart/form-data" |
-| POST Params | Image file encoded as standard "multipart/form-data" to `image` field |
+| POST Params | Image file encoded using standard "multipart/form-data" as `image` field |
 
 ## Create task
 
