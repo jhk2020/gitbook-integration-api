@@ -94,12 +94,6 @@ Minimal parameters for wine: `barcodes` and `external_id`. If `drink_id` is not 
 | Method | GET |
 | GET Params | "food\_fields" - list of fields for food struct [food structs](/structs.md#food-struct). |
 
-## List Wine Styles
-
-| URL | [https://DOMAIN/api/rest/v001/wine\_style](https://DOMAIN/api/rest/v001/wine_style) |
-| --- | --- |
-| Method | GET |
-| GET Params | "style\_fields" - list of fields for wine style struct [wine style structs](/structs.md#wine-style-struct). |
 
 ## Get Product By Barcode
 
