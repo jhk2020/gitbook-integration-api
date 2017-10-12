@@ -67,7 +67,7 @@ Param name: **inventory_fields**
 | wine_url | URL to wine producer or re-seller |
 | pro_rating | list of [structs](#pro-rating-struct) |
 | style_scoring | empty list (deprecated) |
-| food_scoring | list of [structs](#food-score-struct) |
+| food_scoring | empty list (deprecated) |
 | winemakers_note | A note from wine producer |
 
 
@@ -148,14 +148,6 @@ Param name: **sub_region_fields**
 
 Param name: **pro_rating_fields**
 
-## Food Score Struct
-| Field Name | Description |
-| --- | --- |
-| id | Food id, int |
-| score | Food score, int |
-
-Param name: **food_fields**
-
 ## Drink Struct
 
 | Field Name | Description |
@@ -179,13 +171,3 @@ Param name: **drink_fields**
 | description | Producer description, str |
 
 Param name: **producer_fields**
-
-## Food Struct
-
-| Field Name | Description |
-| --- | --- |
-| id | Food id, int |
-| meal | Meal name, str |
-| preparation | Preparation name, str (or None) |
-| image_url | Food image (unselected) |
-| image_selected_url | Food image (selected) |

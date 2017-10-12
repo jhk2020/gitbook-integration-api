@@ -87,13 +87,6 @@ Minimal parameters for wine: `barcodes` and `external_id`. If `wine_id` is not p
 
 Minimal parameters for wine: `barcodes` and `external_id`. If `drink_id` is not passed, it will create item in unmatched state. Please see [Label Processing Tasks Guide](/create-tasks.md).
 
-## List Food
-
-| URL | [https://DOMAIN/api/rest/v001/food](https://DOMAIN/api/rest/v001/food) |
-| --- | --- |
-| Method | GET |
-| GET Params | "food\_fields" - list of fields for food struct [food structs](/structs.md#food-struct). |
-
 
 ## Get Product By Barcode
 
