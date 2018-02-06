@@ -4,9 +4,6 @@
 | --- | --- |
 | id | Inventory id, int |
 | price | Item price, float |
-| special_price | Special price, float |
-| special_price_on | Special price enabled/disable, bool |
-| special_price_amount | Amount of items required to purchase to get special price, int |
 | barcodes | List of barcodes (list of strings) - each barcode has to be unique per retail store, otherwise backend will report validation error |
 | proof | Alcohol proof, float |
 | abv | Alcohol by value, float |
