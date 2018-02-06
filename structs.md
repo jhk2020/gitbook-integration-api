@@ -10,7 +10,7 @@
 | barcodes | List of barcodes (list of strings) - each barcode has to be unique per retail store, otherwise backend will report validation error |
 | proof | Alcohol proof, float |
 | abv | Alcohol by value, float |
-| bottle_size | Bottle size in ml, int |
+| unit_size | Unit size in free form text ("150ML" or "1.5 L"), str |
 | in_stock | Amount of items in stock (regular price), int |
 | updated | Last inventory update date and time |
 | pos_item_name | Product name in POS system |
