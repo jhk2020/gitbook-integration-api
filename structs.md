@@ -3,6 +3,7 @@
 | Field Name | Description |
 | --- | --- |
 | id | Inventory id, int |
+| external_id | Inventory id in external system, has to be unique (str) |
 | price | Item price, float |
 | barcodes | List of barcodes (list of strings) - each barcode has to be unique per retail store, otherwise backend will report validation error |
 | proof | Alcohol proof, float |
