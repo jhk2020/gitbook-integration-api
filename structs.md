@@ -12,6 +12,7 @@
 | in_stock | Amount of items in stock (regular price), int |
 | updated | Last inventory update date and time |
 | pos_item_name | Product name in POS system |
+| category | Product category ("wine" or "drink") - the optional parameter, which has to be passed during POS sync with auto task option enabled. "wine" will put new products into wines processing queue, "drink" - to drinks queue |  
 
 Param name: **inventory_fields**
 
